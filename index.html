@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RINO Politicians</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- SEO Improvements -->
+    <title>RINO Politicians | Republicans In Name Only</title>
+    <meta name="description" content="Exposing RINO politicians who betray conservative values. Learn about Republicans In Name Only including Mitt Romney, Mitch McConnell, Susan Collins, Liz Cheney and others.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rinopoliticians.com/">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="RINO Politicians | Republicans In Name Only">
+    <meta property="og:description" content="Exposing RINO politicians who betray conservative values.">
+    <meta property="og:url" content="https://rinopoliticians.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://rinopoliticians.com/images/favicon.png">
+    
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="RINO Politicians | Republicans In Name Only">
+    <meta name="twitter:description" content="Exposing RINO politicians who betray conservative values.">
+    <meta name="twitter:image" content="https://rinopoliticians.com/images/favicon.png">
+    
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
         /* Reset and base styles */
         * {
@@ -31,7 +49,7 @@
             height: 100%;
             opacity: 0.05;
             z-index: -1;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="red" stroke-width="5"/><path d="M25,25 L75,75" stroke="red" stroke-width="5"/><path d="M75,25 L25,75" stroke="red" stroke-width="5"/></svg>');
+            background-image: url('images/favicon.png');
             background-repeat: repeat;
             background-size: 300px 300px;
             pointer-events: none;
@@ -186,7 +204,6 @@
             opacity: 0.2;
             pointer-events: none;
             z-index: 0;
-            filter: grayscale(100%) contrast(120%);
         }
         
         @media (max-width: 768px) {
@@ -201,7 +218,7 @@
             
             .watermark {
                 width: 150px;
-                height: 150px;
+                height: auto;
                 bottom: 30px;
                 right: 30px;
             }
@@ -214,7 +231,7 @@
             
             .watermark {
                 width: 100px;
-                height: 100px;
+                height: auto;
                 bottom: 20px;
                 right: 20px;
             }
@@ -239,11 +256,57 @@
     <footer>
         <div class="container">
             <p>&copy; <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | Exposing Those Who Betray Conservative Principles</p>
+            <!-- Add last updated date for search engines -->
+            <p style="font-size: 0.8rem; margin-top: 10px;">Last Updated: <time datetime="2025-04-28">April 28, 2025</time></p>
         </div>
     </footer>
     
     <!-- Image Watermark -->
-    <img src="favicon.png" class="watermark" alt="RINO Watermark">
+    <img src="images/favicon.png" class="watermark" alt="RINO Watermark">
+
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "RINO Politicians | Republicans In Name Only",
+        "description": "Exposing RINO politicians who betray conservative values.",
+        "url": "https://rinopoliticians.com/",
+        "datePublished": "2025-04-28",
+        "dateModified": "2025-04-28",
+        "publisher": {
+            "@type": "Organization",
+            "name": "RINOPoliticians.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://rinopoliticians.com/images/favicon.png"
+            }
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Mitt Romney",
+                    "description": "Senator from Utah criticized for moderate positions and voting to convict Donald Trump."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Mitch McConnell",
+                    "description": "Senator from Kentucky criticized for working with Democrats on infrastructure and government funding."
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Susan Collins",
+                    "description": "Senator from Maine known for moderate positions including supporting abortion rights."
+                }
+            ]
+        }
+    }
+    </script>
 
     <!-- JavaScript to dynamically load politician data -->
     <script>
