@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Mitt Romney",
+      "position": "Senator, Utah",
+      "image": "images/mitt-romney.jpg",
+      "description": "Voted to convict Donald Trump in both impeachment trials and criticized Trump's role in the January 6 Capitol riot. Known for moderate positions including support for state-level healthcare mandates."
+    },
+    {
+      "name": "Mitch McConnell",
+      "position": "Senator, Kentucky",
+      "image": "images/mitch-mcconnell.jpg",
+      "description": "Former Senate Majority Leader criticized by the party's populist wing. Worked with Democrats on infrastructure and government funding, and condemned Trump's actions on January 6."
+    },
+    {
+      "name": "Susan Collins",
+      "position": "Senator, Maine",
+      "image": "images/susan-collins.jpg",
+      "description": "Considered one of the most moderate Senate Republicans. Voted against repeal of the Affordable Care Act, supported limited gun control measures, and defended abortion rights."
+    },
+    {
+      "name": "Lisa Murkowski",
+      "position": "Senator, Alaska",
+      "image": "images/lisa-murkowski.jpg",
+      "description": "Known for her independent streak, supporting abortion rights and environmental policies. Voted to convict Trump in his second impeachment trial."
+    },
+    {
+      "name": "Liz Cheney",
+      "position": "Former Representative, Wyoming",
+      "image": "images/liz-cheney.jpg",
+      "description": "Voted to impeach Trump following January 6 Capitol riot and served on the House committee investigating the event. Outspoken critic of Trump despite otherwise conservative record."
+    },
+    {
+      "name": "Adam Kinzinger",
+      "position": "Former Representative, Illinois",
+      "image": "images/adam-kinzinger.jpg",
+      "description": "One of ten House Republicans who voted to impeach Trump after January 6. Participated in the January 6 committee and criticized Trump's influence."
+    },
+    {
+      "name": "John Kasich",
+      "position": "Former Governor, Ohio",
+      "image": "images/john-kasich.jpg",
+      "description": "Challenged Trump in the 2016 primaries. Refused to endorse Trump in 2016, supported Joe Biden in 2020, and advocated for bipartisan governance."
+    },
+    {
+      "name": "Jeff Flake",
+      "position": "Former Senator, Arizona",
+      "image": "images/jeff-flake.jpg",
+      "description": "Criticized Trump's rhetoric and behavior during his Senate tenure. Expressed concerns about erosion of democratic norms and chose not to seek re-election in 2018."
+    },
+    {
+      "name": "Anthony Gonzalez",
+      "position": "Former Representative, Ohio",
+      "image": "images/anthony-gonzalez.jpg",
+      "description": "Voted to impeach Trump after January 6 and criticized his actions. Faced strong opposition from within the party, leading him to forego re-election in 2022."
+    },
+    {
+      "name": "Paul Ryan",
+      "position": "Former Speaker of the House",
+      "image": "images/paul-ryan.jpg",
+      "description": "Led the House from 2015 to 2019. Critics claim he wasn't aggressive enough on issues like immigration and occasionally criticized Trump after retiring in 2018."
+    }
+  ]

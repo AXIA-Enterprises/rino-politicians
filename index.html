@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RINO Politicians</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .politicians-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .politician-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .politician-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .politician-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .politician-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .politician-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .politician-position {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .politician-description {
+            font-size: 0.85rem;
+            color: #444;
+            text-align: left;
+            line-height: 1.4;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .politician-card.expanded .politician-description {
+            display: block;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #1a237e;
+            font-size: 0.8rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .politicians-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .politicians-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RINO Politicians</h1>
+            <p class="subtitle">Republicans In Name Only</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="politicians-grid">
+            <!-- Example politician cards - will be replaced by JavaScript -->
+            <div class="politician-card">
+                <img src="https://via.placeholder.com/400x500" alt="Politician Name" class="politician-image">
+                <div class="politician-info">
+                    <h2 class="politician-name">Politician Name</h2>
+                    <p class="politician-position">Senator, State</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript to dynamically load politician data -->
+    <script>
+        // Load politician data from JSON file
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('politicians.json')
+                .then(response => response.json())
+                .then(data => {
+                    const politiciansGrid = document.querySelector('.politicians-grid');
+                    politiciansGrid.innerHTML = ''; // Clear example cards
+                    
+                    data.forEach(politician => {
+                        const card = document.createElement('div');
+                        card.className = 'politician-card';
+                        
+                        card.innerHTML = `
+                            <img src="${politician.image}" alt="${politician.name}" class="politician-image">
+                            <div class="politician-info">
+                                <h2 class="politician-name">${politician.name}</h2>
+                                <p class="politician-position">${politician.position}</p>
+                                <span class="read-more">Read More</span>
+                                <p class="politician-description">${politician.description}</p>
+                            </div>
+                        `;
+                        
+                        // Add click event to toggle description
+                        const readMoreBtn = card.querySelector('.read-more');
+                        readMoreBtn.addEventListener('click', function() {
+                            card.classList.toggle('expanded');
+                            readMoreBtn.textContent = card.classList.contains('expanded') ? 'Read Less' : 'Read More';
+                        });
+                        
+                        politiciansGrid.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error loading politician data:', error));
+        });
+    </script>
+</body>
+</html>
