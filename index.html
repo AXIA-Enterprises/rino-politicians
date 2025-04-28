@@ -14,20 +14,37 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            z-index: -1;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="red" stroke-width="5"/><path d="M25,25 L75,75" stroke="red" stroke-width="5"/><path d="M75,25 L25,75" stroke="red" stroke-width="5"/></svg>');
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            pointer-events: none;
         }
         
         header {
-            background-color: #1a237e;
+            background-color: #800000;
             color: white;
             padding: 2rem 0;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 15px rgba(255,0,0,0.3);
         }
         
         .container {
@@ -37,17 +54,29 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
         
         .subtitle {
             font-size: 1.2rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            color: #ff9999;
+            font-weight: bold;
         }
         
         main {
             padding: 2rem 0;
+            position: relative;
         }
         
         .politicians-grid {
@@ -55,19 +84,22 @@
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            position: relative;
+            z-index: 1;
         }
         
         .politician-card {
-            background-color: white;
+            background-color: #1a1a1a;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
         }
         
         .politician-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(255,0,0,0.3);
         }
         
         .politician-image {
@@ -75,6 +107,13 @@
             height: 250px;
             object-fit: cover;
             display: block;
+            filter: grayscale(40%) contrast(120%);
+            transition: filter 0.3s ease;
+            border-bottom: 3px solid #800000;
+        }
+        
+        .politician-card:hover .politician-image {
+            filter: grayscale(20%) contrast(130%);
         }
         
         .politician-info {
@@ -86,20 +125,22 @@
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
         }
         
         .politician-position {
             font-size: 0.9rem;
-            color: #666;
+            color: #aaa;
             margin-bottom: 1rem;
         }
         
         .politician-description {
             font-size: 0.85rem;
-            color: #444;
+            color: #ccc;
             text-align: left;
             line-height: 1.4;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #333;
             padding-top: 1rem;
             margin-top: 1rem;
             display: none;
@@ -112,18 +153,38 @@
         .read-more {
             display: inline-block;
             margin-top: 0.5rem;
-            color: #1a237e;
+            color: #ff6666;
             font-size: 0.8rem;
             cursor: pointer;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s ease;
+        }
+        
+        .read-more:hover {
+            color: #ff0000;
         }
         
         footer {
-            background-color: #1a237e;
+            background-color: #800000;
             color: white;
             text-align: center;
             padding: 2rem 0;
             margin-top: 3rem;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+        
+        /* Watermark */
+        .watermark {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
         }
         
         @media (max-width: 768px) {
@@ -135,11 +196,25 @@
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 1.5rem;
             }
+            
+            .watermark {
+                width: 150px;
+                height: 150px;
+                bottom: 30px;
+                right: 30px;
+            }
         }
         
         @media (max-width: 480px) {
             .politicians-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .watermark {
+                width: 100px;
+                height: 100px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -149,27 +224,33 @@
         <div class="container">
             <h1>RINO Politicians</h1>
             <p class="subtitle">Republicans In Name Only</p>
+            <p class="tagline">Betraying Conservative Values</p>
         </div>
     </header>
     
     <main class="container">
         <div class="politicians-grid">
-            <!-- Example politician cards - will be replaced by JavaScript -->
-            <div class="politician-card">
-                <img src="https://via.placeholder.com/400x500" alt="Politician Name" class="politician-image">
-                <div class="politician-info">
-                    <h2 class="politician-name">Politician Name</h2>
-                    <p class="politician-position">Senator, State</p>
-                </div>
-            </div>
+            <!-- Politicians will be loaded dynamically via JavaScript -->
         </div>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | All Rights Reserved</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | Exposing Those Who Betray Conservative Principles</p>
         </div>
     </footer>
+    
+    <!-- SVG Watermark -->
+    <svg class="watermark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <!-- Republican Elephant Silhouette -->
+        <g transform="translate(50 50) scale(0.6) translate(-50 -50)">
+            <path d="M85,65 C85,65 90,55 90,45 C90,35 85,30 80,30 C75,30 75,35 75,35 C75,35 70,25 65,25 C60,25 60,30 60,30 C60,30 55,20 50,20 C45,20 45,25 45,25 C45,25 40,15 35,15 C30,15 30,20 30,20 C30,20 25,10 20,10 C15,10 15,15 15,15 L15,30 C15,30 5,30 5,40 C5,50 10,60 10,60 L15,60 L15,80 L25,80 L25,60 L30,60 L30,80 L40,80 L40,60 L45,60 L45,80 L55,80 L55,60 L60,60 L60,80 L70,80 L70,60 L75,60 L75,80 L85,80 L85,60 Z" fill="#ff0000" stroke="none" />
+        </g>
+        <!-- Prohibition Circle -->
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#ff0000" stroke-width="4" />
+        <!-- Diagonal Line -->
+        <line x1="20" y1="20" x2="80" y2="80" stroke="#ff0000" stroke-width="4" />
+    </svg>
 
     <!-- JavaScript to dynamically load politician data -->
     <script>
