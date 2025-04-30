@@ -109,6 +109,37 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         
+        .navigation {
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            padding: 1rem 0;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        
+        .nav-links li {
+            margin: 0 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links a:hover {
+            color: #ff6666;
+        }
+        
         main {
             padding: 2rem 0;
             position: relative;
@@ -268,6 +299,10 @@
                 font-size: 1.2rem;
             }
             
+            .nav-links li {
+                margin: 0 0.8rem;
+            }
+            
             .politicians-grid {
                 grid-template-columns: 1fr;
             }
@@ -290,6 +325,16 @@
         </div>
     </header>
     
+    <nav class="navigation">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <main class="container">
         <div class="politicians-grid">
             <!-- Politicians will be loaded dynamically via JavaScript -->
@@ -298,7 +343,7 @@
     
     <footer>
         <div class="container">
-            <p>&copy; <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | Exposing Those Who Betray Conservative Principles</p>
+            <p>© <script>document.write(new Date().getFullYear())</script> RINOPoliticians.com | Exposing Those Who Betray Conservative Principles</p>
             <!-- Add last updated date for search engines -->
             <p style="font-size: 0.8rem; margin-top: 10px;">Last Updated: <time datetime="2025-04-28">April 28, 2025</time></p>
         </div>
