@@ -10,3 +10,6 @@ Allow: /images/
 
 # Specify the location of your sitemap
 Sitemap: https://rinopoliticians.com/sitemap.xml
+
+# Allow access to Bing authentication file
+Allow: /BingSiteAuth.xml
