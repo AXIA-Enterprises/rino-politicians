@@ -19,6 +19,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://rinopoliticians.com/BingSiteAuth.xml</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <!-- Add additional URLs as your site grows -->
   
   <!-- Image example (add for important images) -->
