@@ -1,12 +1,32 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rinopoliticians.com/</loc>
-    <lastmod>2025-04-29</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rinopoliticians.com/about.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rinopoliticians.com/glossary.html</loc>
+    <lastmod>2025-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Add additional URLs as your site grows -->
+  
+  <!-- Image example (add for important images) -->
+  <url>
+    <loc>https://rinopoliticians.com/images/</loc>
+    <image:image>
+      <image:loc>https://rinopoliticians.com/images/favicon.ico</image:loc>
+      <image:title>Rino Politicians Favicon</image:title>
+    </image:image>
   </url>
 </urlset>
