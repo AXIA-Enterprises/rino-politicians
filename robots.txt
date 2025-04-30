@@ -1,5 +1,12 @@
+# Enhanced robots.txt for rinopoliticians.com
+# Allow all search engines to crawl all content
 User-agent: *
 Allow: /
 
-# Allow all search engines to crawl all content
+# Make sure search engines can access CSS and JS files
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Specify the location of your sitemap
 Sitemap: https://rinopoliticians.com/sitemap.xml
